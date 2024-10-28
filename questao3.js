@@ -26,10 +26,7 @@ const highestAverageBillingDays = (data) => {
     const ignoredValue = 0
     const filteredDays = data.filter((item) => item.valor !== ignoredValue)
 
-    const total = filteredDays.reduce(
-        (acumulator, item) => acumulator + item.valor,
-        0
-    )
+    const total = filteredDays.reduce((acc, item) => acc + item.valor, 0)
 
     const media = total / filteredDays.length
     const daysHighest = filteredDays.filter((item) => item.valor > media)
